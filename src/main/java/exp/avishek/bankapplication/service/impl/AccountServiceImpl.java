@@ -1,10 +1,11 @@
 package exp.avishek.bankapplication.service.impl;
 
+import exp.avishek.bankapplication.dao.AccountDao;
 import exp.avishek.bankapplication.dao.UserDao;
 import exp.avishek.bankapplication.model.Account;
 import exp.avishek.bankapplication.model.entity.AccountMainEntity;
 import exp.avishek.bankapplication.model.entity.UserEntity;
-import exp.avishek.bankapplication.service.AccountDao;
+import exp.avishek.bankapplication.service.AccountService;
 import exp.avishek.bankapplication.util.mapper.AccountMapper;
 import org.springframework.stereotype.Service;
 
@@ -27,10 +28,10 @@ import java.util.stream.Collectors;
  *
  */
 @Service
-public class AccountServiceImpl implements AccountDao {
+public class AccountServiceImpl implements AccountService {
 
     private final UserDao userDao;
-    private final exp.avishek.bankapplication.dao.AccountDao accountDao;
+    private final AccountDao accountDao;
 
     public AccountServiceImpl(UserDao userDao, exp.avishek.bankapplication.dao.AccountDao accountDao) {
         this.userDao = userDao;

@@ -4,7 +4,7 @@ import exp.avishek.bankapplication.model.Account;
 
 import java.util.List;
 
-public interface AccountDao {
+public interface AccountService {
 
     Account getAccountDataByNumber(Long accountNumber);
 
