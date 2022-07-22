@@ -1,15 +1,18 @@
 package exp.avishek.bankapplication.service;
 
+import exp.avishek.bankapplication.exceptions.UnableToFindAccountException;
 import exp.avishek.bankapplication.model.Account;
+
+import java.math.BigDecimal;
 
 public interface TransactionService {
 
     Account saveBalance(Double balance, Account account);
 
-    Account getBalance(Long accountNumber);
+    BigDecimal getBalance(Long accountNumber);
 
-    Account addBalance(Long changeBalance, Long accountNumber);
+    Account addBalance(BigDecimal changeBalance, Long accountNumber) throws UnableToFindAccountException;
 
-    Account deductBalance(Long changeBalance, Long accountNumber);
+    Account deductBalance(BigDecimal changeBalance, Long accountNumber) throws UnableToFindAccountException;
 
 }
